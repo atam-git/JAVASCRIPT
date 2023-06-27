@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="myScript.js"></script>
+  </head>
+  <body>
+    <div>
+      <div>
+        <h2>What Can JavaScript Do?</h2>
+        <p id="demo">JavaScript can change HTML content.</p>
+        <button
+          type="button"
+          onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"'
+        >
+          Click Me!
+        </button>
+      </div>
+
+      <br />
+
+      <div>
+        <h2>What Can JavaScript Do?</h2>
+        <p>JavaScript can change HTML attribute values.</p>
+        <p>
+          In this case JavaScript changes the value of the src (source)
+          attribute of an image.
+        </p>
+        <button
+          onclick="document.getElementById('myImage').src='Images/pic_bulbon.gif'"
+        >
+          Turn on the light
+        </button>
+        <img id="myImage" src="Images/pic_bulboff.gif" style="width: 100px" />
+        <button
+          onclick="document.getElementById('myImage').src='Images/pic_bulboff.gif'"
+        >
+          Turn off the light
+        </button>
+      </div>
+
+      <br />
+
+      <div>
+        <p id="demo1">JavaScript can change HTML content.</p>
+        <button type="button" onclick="myFunction()">Try it</button>
+      </div>
+
+      <br />
+
+      <div>
+        <h2>JavaScript Statements</h2>
+        <p>
+          A <b>JavaScript program</b> is a list of <b>statements</b> to be
+          executed by a computer.
+        </p>
+        <p id="demo2"></p>
+        <script>
+          let x, y, z; // Statement 1
+          x = 5; // Statement 2
+          y = 6; // Statement 3
+          z = x + y; // Statement 4
+          document.getElementById("demo2").innerHTML =
+            "The value of z is " + z + ".";
+        </script>
+      </div>
+
+      <br />
+
+      <div>
+        <h2>JavaScript Hoisting</h2>
+        <p>With <b>let</b>, you cannot use a variable before it is declared.</p>
+        <p id="demo3"></p>
+        <script>
+          try {
+            carName = "Saab";
+            let carName;
+          } catch (err) {
+            document.getElementById("demo3").innerHTML = err;
+          }
+        </script>
+      </div>
+
+      <br />
+
+      <div>
+        <h2>JavaScript Objects</h2>
+        <p>
+          An object method is a function definition, stored as a property value.
+        </p>
+
+        <p id="demo4"></p>
+
+        <script>
+          // Create an object:
+          const person = {
+            firstName: "John",
+            lastName: "Doe",
+            id: 5566,
+            fullName: function () {
+              return this.firstName + " " + this.lastName;
+            },
+          };
+
+          // Display data from the object:
+          document.getElementById("demo4").innerHTML = person.fullName();
+        </script>
+      </div>
+
+      <br />
+
+      <div>
+        <h2>JavaScript HTML Events</h2>
+        <button onclick="this.innerHTML=Date()">The time is?</button>
+        <button onclick="document.getElementById('demo5').innerHTML=Date()">
+          The time is?
+        </button>
+        <span id="demo5"></span>
+      </div>
+
+      <br />
+
+      <div>
+        <h2>JavaScript String Methods</h2>
+
+        <p>Replace "Microsoft" with "W3Schools" in the paragraph below:</p>
+
+        <button onclick="myFunction()">Try it</button>
+
+        <p id="demo6">Please visit Microsoft and Microsoft!</p>
+
+        <script>
+          function myFunction() {
+            let text = document.getElementById("demo6").innerHTML;
+            document.getElementById("demo6").innerHTML = text.replace(
+              /MICROSOFT/i,
+              Date()
+            );
+            // text.replace(/Microsoft/g,"W3Schools");
+          }
+        </script>
+      </div>
+
+      <br />
+
+      <div>
+        <h2>JavaScript Template Literals</h2>
+
+        <p>Template literals allows variables in strings:</p>
+
+        <p id="demo7"></p>
+
+        <p>Template literals are not supported in Internet Explorer.</p>
+
+        <script>
+          let header = "Templates Literals";
+          let tags = ["template literals", "javascript", "es6"];
+
+          let html = `<h2>${header}</h2><ul>`;
+
+          for (const p of tags) {
+            html += `<li>${p}</li>`;
+          }
+
+          html += `</ul>`;
+          document.getElementById("demo7").innerHTML = html;
+        </script>
+      </div>
+
+      <br />
+
+      <div>
+        <h2>JavaScript Numbers</h2>
+
+        <p>
+          Infinity is returned if you calculate a number outside the largest
+          possible number:
+        </p>
+
+        <p id="demo8"></p>
+
+        <script>
+          let myNumber = 2;
+          let txt = "";
+          while (myNumber != Infinity) {
+            myNumber = myNumber * myNumber;
+            txt = txt + myNumber + "<br>";
+          }
+          document.getElementById("demo8").innerHTML = txt;
+        </script>
+      </div>
+
+      <br />
+
+      <div>
+        <h2>JavaScript Arrays</h2>
+
+        <p>
+          The best way to loop through an array is using a standard for loop:
+        </p>
+
+        <p id="demo9"></p>
+
+        <script>
+          const fruits = ["Banana", "Orange", "Apple", "Mango"];
+          let fLen = fruits.length;
+
+          let text = "<ul>";
+          for (let i = 0; i < fLen; i++) {
+            text += "<li>" + fruits[i] + "</li>";
+          }
+          text += "</ul>";
+
+          document.getElementById("demo9").innerHTML = text;
+        </script>
+
+        <br />
+
+        <h2>JavaScript Arrays</h2>
+
+        <p>Array.forEach() calls a function for each array element.</p>
+
+        <p id="demo10"></p>
+
+        <script>
+          const fruits1 = ["Banana", "Orange", "Apple", "Mango"];
+
+          let text1 = "<ul>";
+          fruits1.forEach(myFunction);
+          text1 += "</ul>";
+          document.getElementById("demo10").innerHTML = text1;
+
+          function myFunction(value) {
+            text1 += "<li>" + value + "</li>";
+          }
+        </script>
+      </div>
+
+      <br />
+
+      <div>
+        <h2>JavaScript Arrays</h2>
+
+        <p>The push method appends a new element to an array.</p>
+
+        <button onclick="myFunction()">Try it</button>
+
+        <p id="demo11"></p>
+
+        <script>
+          const fruits2 = ["Banana", "Orange", "Apple"];
+          document.getElementById("demo11").innerHTML = fruits2;
+
+          function myFunction() {
+            fruits2.push("Lemon");
+            document.getElementById("demo11").innerHTML = fruits2;
+          }
+        </script>
+      </div>
+
+      <br />
+
+      <div>
+        <h2>JavaScript Array Sort</h2>
+
+        <p>
+          Click the buttons to sort the array alphabetically or numerically.
+        </p>
+
+        <button onclick="myFunction1()">Sort Alphabetically</button>
+        <button onclick="myFunction2()">Sort Numerically</button>
+
+        <p id="demo12"></p>
+
+        <script>
+          const points = [40, 100, 1, 5, 25, 10];
+          document.getElementById("demo12").innerHTML = points;
+
+          function myFunction1() {
+            points.sort();
+            document.getElementById("demo12").innerHTML = points;
+          }
+          function myFunction2() {
+            points.sort(function (a, b) {
+              return a - b;
+            });
+            document.getElementById("demo12").innerHTML = points;
+          }
+        </script>
+      </div>
+
+      <br />
+
+      <div>
+        <h2>JavaScript if .. else</h2>
+
+        <p>A time-based greeting:</p>
+
+        <p id="demo13"></p>
+
+        <script>
+          const time = new Date().getHours();
+          let greeting;
+          if (time < 10) {
+            greeting = "Good morning";
+          } else if (time < 20) {
+            greeting = "Good day";
+          } else {
+            greeting = "Good evening";
+          }
+          document.getElementById("demo13").innerHTML = greeting;
+        </script>
+        <br />
+        <h2>JavaScript switch</h2>
+
+        <p id="demo14"></p>
+
+        <script>
+          let text2;
+          switch (new Date().getDay()) {
+            case 6:
+              text2 = "Today is Saturday";
+              break;
+            case 0:
+              text2 = "Today is Sunday";
+              break;
+            default:
+              text2 = "Looking forward to the Weekend";
+          }
+          document.getElementById("demo14").innerHTML = text2;
+        </script>
+      </div>
+
+      <br />
+
+      <div>
+        <h2>JavaScript For Loop</h2>
+
+        <p id="demo15"></p>
+
+        <script>
+          const cars = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audi"];
+
+          let text3 = "";
+          for (let i = 0; i < cars.length; i++) {
+            text3 += cars[i] + "<br>";
+          }
+
+          document.getElementById("demo15").innerHTML = text3;
+        </script>
+      </div>
+
+      <br />
+
+      <div>
+        <h2>JavaScript For In Loop</h2>
+        <p>The for in statement loops through the properties of an object:</p>
+
+        <p id="demo16"></p>
+
+        <script>
+          const person1 = { fname: "John", lname: "Doe", age: 25 };
+
+          let txt1 = "";
+          for (let o in person1) {
+            txt1 += person1[o] + " ";
+          }
+
+          document.getElementById("demo16").innerHTML = txt1;
+        </script>
+
+        <br />
+
+        <h2>JavaScript For In</h2>
+        <p>The for in statement can loops over array values:</p>
+
+        <p id="demo17"></p>
+
+        <script>
+          const numbers1 = [45, 4, 9, 16, 25];
+
+          let txt2 = "";
+          for (let xa in numbers1) {
+            txt2 += numbers1[xa] + "<br>";
+          }
+
+          document.getElementById("demo17").innerHTML = txt2;
+        </script>
+        <br />
+
+        <h2>JavaScript Array.forEach()</h2>
+        <p>Calls a function once for each array element.</p>
+
+        <p id="demo18"></p>
+
+        <script>
+          const numbers2 = [45, 4, 9, 16, 25];
+
+          let txt3 = "";
+          numbers2.forEach(myFunction);
+          document.getElementById("demo18").innerHTML = txt3;
+
+          function myFunction(value, index, array) {
+            txt3 += value + "<br>";
+          }
+          // Note that the function takes 3 arguments:
+          // The item value
+          // The item index
+          // The array itself
+        </script>
+        <br />
+        <h2>JavaScript While Loop</h2>
+
+        <p id="demo19"></p>
+
+        <script>
+          let txt4 = "";
+          let i1 = 0;
+          while (i1 < 10) {
+            txt4 += "<br>The number is " + i1;
+            i1++;
+          }
+          document.getElementById("demo19").innerHTML = txt4;
+        </script>
+        <br />
+
+        <h2>JavaScript Do While Loop</h2>
+
+        <p id="demo20" p>
+          <script>
+            let text5 = "";
+            let ii = 0;
+
+            do {
+              text5 += "<br>The number is " + ii;
+              ii++;
+            } while (ii < 10);
+
+            document.getElementById("demo20").innerHTML = text5;
+          </script>
+        </p>
+      </div>
+
+      <br />
+
+      <div>
+        <h2>JavaScript Arrow Function</h2>
+
+        <p>
+          This example shows the syntax of an Arrow Function, and how to use it.
+        </p>
+
+        <p id="demo21"></p>
+
+        <script>
+          let myFunction4 = (a7, b7) => a7 * b7;
+          document.getElementById("demo21").innerHTML = myFunction4(4, 5);
+        </script>
+      </div>
+    </div>
+  </body>
+</html>

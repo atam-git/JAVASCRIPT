@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>JS For Beginners</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://bootswatch.com/5/lumen/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Worker Profiler</a>
+        <form class="d-flex">
+          <input
+            class="form-control me-sm-2"
+            type="text"
+            id="filter"
+            placeholder="Search User...."
+          />
+          <button
+            class="btn btn-danger btn-sm delete"
+            style="display: none"
+            type="reset"
+            id="reset"
+          >
+            X
+          </button>
+        </form>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 offset-md-3 alertcontain">
+          <form class="form-group" id="my-form">
+            <h1 class="text-center mt-4">Add User</h1>
+            <div class="msg"></div>
+            <div>
+              <label class="col-form-label col-form-label-sm mt-1" for="Fname"
+                >Frist-name:</label
+              >
+              <input
+                class="form-control form-control-sm"
+                type="text"
+                id="fname"
+              />
+            </div>
+            <div>
+              <label class="col-form-label col-form-label-sm mt-1" for="Lname"
+                >Last-name:</label
+              >
+              <input
+                class="form-control form-control-sm"
+                type="text"
+                id="lname"
+              />
+            </div>
+            <div>
+              <label class="col-form-label col-form-label-sm mt-1" for="Uname"
+                >User-name:</label
+              >
+              <input
+                class="form-control form-control-sm"
+                type="text"
+                id="uname"
+              />
+            </div>
+            <div>
+              <label class="col-form-label col-form-label-sm mt-1" for="email"
+                >Email:</label
+              >
+              <input
+                class="form-control form-control-sm"
+                type="text"
+                id="email"
+              />
+            </div>
+            <div class="d-grid gap-2 mt-1">
+              <input
+                class="btn btn-lg btn-primary"
+                type="submit"
+                value="Submit"
+              />
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="tableclass" style="visibility: show">
+        <table class="table table-striped mt-5">
+          <thead>
+            <tr>
+              <th>Username</th>
+              <th>First-name</th>
+              <th>Last-name</th>
+              <th>Email Address</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="profiles"></tbody>
+        </table>
+      </div>
+    </div>
+    <script src="myScript.js"></script>
+  </body>
+</html>
